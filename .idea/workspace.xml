@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="dacd0d83-4e50-4bef-8058-20ec362c30d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kaalutudkeskmine/Grade.java" afterPath="$PROJECT_DIR$/src/kaalutudkeskmine/Grade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/kaalutudkeskmine/Main.java" afterPath="$PROJECT_DIR$/src/kaalutudkeskmine/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +19,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/kaalutudkeskmine/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
@@ -30,6 +29,16 @@
                 <element signature="e#713#714#0" expanded="true" />
                 <element signature="e#741#742#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,6 +76,7 @@
         <option value="$PROJECT_DIR$/src/kaalutudkeskmine/MyTools.java" />
         <option value="$PROJECT_DIR$/src/kaalutudkeskmine/Main.java" />
         <option value="$PROJECT_DIR$/src/kaalutudkeskmine/Grade.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -482,6 +492,14 @@
             <element signature="e#713#714#0" expanded="true" />
             <element signature="e#741#742#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
