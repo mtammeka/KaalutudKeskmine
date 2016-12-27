@@ -56,7 +56,7 @@ public class Main extends Application {
 
         grid.add(contents, 0, 1, 5, 20);
 
-        grid.setGridLinesVisible(false);
+        grid.setGridLinesVisible(true);
 
         submitButton.setOnAction(event -> {
 
