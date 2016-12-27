@@ -23,12 +23,7 @@ public class Main extends Application {
     String summaryText = "Kaalutud keskmine:\n";
     StringBuilder listOfData = new StringBuilder(firstLine);
 
-
-
-
-
     public static void main(String[] args) {
-        System.out.println("Hello");
         launch(args);
     }
 
@@ -40,7 +35,6 @@ public class Main extends Application {
 
         DecimalFormat rounder = new DecimalFormat("#.##");
         rounder.setRoundingMode(RoundingMode.HALF_UP);
-
 
         GridPane grid = new GridPane();
 
@@ -137,8 +131,6 @@ public class Main extends Application {
         Scene scene = new Scene(grid, 600, 300);
         primaryStage.setScene(scene);
         primaryStage.show();
-
-
 
     }
 }

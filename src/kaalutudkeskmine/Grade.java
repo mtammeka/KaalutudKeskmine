@@ -9,27 +9,17 @@ public class Grade {
     private int grade;
     private int points;
 
-
     public Grade(int grade, int points) {
         this.grade = grade;
         this.points = points;
     }
 
-
     public int getGrade() {
         return grade;
     }
 
-    public void setGrade(int grade) {
-        this.grade = grade;
-    }
-
     public int getPoints() {
         return points;
-    }
-
-    public void setPoints(int points) {
-        this.points = points;
     }
 
     public static double calculateWeightedAverage(ArrayList<Grade> grades) {
@@ -40,12 +30,9 @@ public class Grade {
                 gradeSum += grade.getGrade() * grade.getPoints();
                 pointSum += grade.getPoints();
             }
-
-
             return (double) gradeSum / pointSum;
         } else {
             return 0;
         }
-
     }
 }
