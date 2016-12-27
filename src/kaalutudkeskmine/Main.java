@@ -97,14 +97,19 @@ public class Main extends Application {
 
         removeLastButton.setOnAction(event -> {
 
-            grades.remove(grades.size() - 1);
+            try {
+                grades.remove(grades.size() - 1);
 
-            listOfData = gradeArrayToText(grades);
-            double weightedAverage = Grade.calculateWeightedAverage(grades);
-            if (weightedAverage != 0) {
-                listOfData.append(rounder.format(weightedAverage));
+                listOfData = gradeArrayToText(grades);
+                double weightedAverage = Grade.calculateWeightedAverage(grades);
+                if (weightedAverage != 0) {
+                    listOfData.append(rounder.format(weightedAverage));
+                }
+                contents.setText(listOfData.toString());
+            } catch (ArrayIndexOutOfBoundsException exception) {
+                // not doing anything with the exception
+                return;
             }
-            contents.setText(listOfData.toString());
 
         });
 
@@ -114,13 +119,12 @@ public class Main extends Application {
 
     }
 
-    private StringBuilder gradeArrayToText(ArrayList<Grade> grades) {
+    StringBuilder gradeArrayToText(ArrayList<Grade> grades) {
+
         StringBuilder listOfData;
 
         if (!grades.isEmpty()) {
-            String firstLine = "Hinne\tPunktikaal\n";
-            String summaryText = "Kaalutud keskmine:\n";
-            listOfData = new StringBuilder(firstLine);
+            listOfData = new StringBuilder("Hinne\tPunktikaal\n");
 
             for (Grade thisGrade : grades) {
                 listOfData.append(thisGrade.getGrade());
@@ -128,12 +132,11 @@ public class Main extends Application {
                 listOfData.append(thisGrade.getPoints());
                 listOfData.append("\n");
             }
-            listOfData.append(summaryText);
+            listOfData.append("\nKaalutud keskmine:\n");
         } else {
             listOfData = new StringBuilder("");
         }
 
         return listOfData;
-
     }
 }
