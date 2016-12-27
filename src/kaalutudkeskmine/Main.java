@@ -19,9 +19,7 @@ import java.util.ArrayList;
  * Created by Madis on 27.12.2016.
  */
 public class Main extends Application {
-    String firstLine = "Hinne\tPunktikaal\n";
-    String summaryText = "Kaalutud keskmine:\n";
-    StringBuilder listOfData = new StringBuilder(firstLine);
+    StringBuilder listOfData;
 
     public static void main(String[] args) {
         launch(args);
@@ -56,7 +54,6 @@ public class Main extends Application {
         TextArea contents = new TextArea();
         contents.setEditable(false);
 
-        contents.setText(listOfData.toString());
         grid.add(contents, 0, 1, 5, 20);
 
         grid.setGridLinesVisible(false);
@@ -88,18 +85,9 @@ public class Main extends Application {
             gradeField.setText("");
             pointsField.setText("");
 
-            listOfData = new StringBuilder(firstLine);
-            for (Grade thisGrade : grades) {
-                listOfData.append(thisGrade.getGrade());
-                listOfData.append("\t\t");
-                listOfData.append(thisGrade.getPoints());
-                listOfData.append("\n");
-            }
-
-            listOfData.append(summaryText);
+            listOfData = gradeArrayToText(grades);
             double weightedAverage = Grade.calculateWeightedAverage(grades);
             if (weightedAverage != 0) {
-
                 listOfData.append(rounder.format(weightedAverage));
             }
 
@@ -109,28 +97,43 @@ public class Main extends Application {
 
         removeLastButton.setOnAction(event -> {
 
-            if (!grades.isEmpty()) {
-                grades.remove(grades.size() - 1);
+            grades.remove(grades.size() - 1);
 
-                listOfData = new StringBuilder(firstLine);
-                for (Grade thisGrade : grades) {
-                    listOfData.append(thisGrade.getGrade());
-                    listOfData.append("\t\t");
-                    listOfData.append(thisGrade.getPoints());
-                    listOfData.append("\n");
-                }
-                listOfData.append(summaryText);
-                double weightedAverage = Grade.calculateWeightedAverage(grades);
-                if (weightedAverage != 0) {
-                    listOfData.append(rounder.format(weightedAverage));
-                }
-                contents.setText(listOfData.toString());
+            listOfData = gradeArrayToText(grades);
+            double weightedAverage = Grade.calculateWeightedAverage(grades);
+            if (weightedAverage != 0) {
+                listOfData.append(rounder.format(weightedAverage));
             }
+            contents.setText(listOfData.toString());
+
         });
 
         Scene scene = new Scene(grid, 600, 300);
         primaryStage.setScene(scene);
         primaryStage.show();
+
+    }
+
+    private StringBuilder gradeArrayToText(ArrayList<Grade> grades) {
+        StringBuilder listOfData;
+
+        if (!grades.isEmpty()) {
+            String firstLine = "Hinne\tPunktikaal\n";
+            String summaryText = "Kaalutud keskmine:\n";
+            listOfData = new StringBuilder(firstLine);
+
+            for (Grade thisGrade : grades) {
+                listOfData.append(thisGrade.getGrade());
+                listOfData.append("\t\t");
+                listOfData.append(thisGrade.getPoints());
+                listOfData.append("\n");
+            }
+            listOfData.append(summaryText);
+        } else {
+            listOfData = new StringBuilder("");
+        }
+
+        return listOfData;
 
     }
 }
